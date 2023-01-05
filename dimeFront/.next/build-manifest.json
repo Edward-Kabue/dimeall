@@ -29,6 +29,26 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/home-freelance-personal": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/home-freelance-personal.js"
+    ],
+    "/home-it-solutions2": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/home-it-solutions2.js"
+    ],
+    "/home-marketing-startup": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/home-marketing-startup.js"
+    ],
+    "/page-single-project-5": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/page-single-project-5.js"
     ]
   },
   "ampFirstPages": []

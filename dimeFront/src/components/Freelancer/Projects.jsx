@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import projectsData from '@data/Freelancer/projects.json';
+import 
 
 import "swiper/css";
 import 'swiper/css/autoplay';

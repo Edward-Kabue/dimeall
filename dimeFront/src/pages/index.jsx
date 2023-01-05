@@ -14,6 +14,8 @@ import FAQ from '@components/CyberSecurity/FAQ';
 import Team from '@components/CyberSecurity/Team';
 import Blog from '@components/CyberSecurity/Blog';
 import Footer from '@components/CyberSecurity/Footer';
+import Slide from '@components/slide/slide';
+import Projects from '@components/Freelancer/Projects';
 
 const HomeCyberSecurity = () => {
   useEffect(() => {
@@ -27,11 +29,12 @@ const HomeCyberSecurity = () => {
         <SideMenu />
         <Header />
         <main>
+          <Slide />
           <Features />
           <About />
           <Services />
           <Solutions />
-          <Pricing />
+          <Projects />
           <FAQ />
           <Team />
           <Blog />

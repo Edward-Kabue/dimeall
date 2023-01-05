@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta name='author' content='' />
           <link
             rel='shortcut icon'
-            href='/assets/img/fav.png'
+            href='/assets/img/favicon-1.png'
             title='Favicon'
             sizes='16x16'
           />
