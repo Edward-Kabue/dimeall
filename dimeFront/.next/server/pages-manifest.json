@@ -2,9 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/home-freelance-personal": "pages/home-freelance-personal.js",
-  "/home-marketing-startup": "pages/home-marketing-startup.js",
-  "/home-it-solutions2": "pages/home-it-solutions2.js",
-  "/": "pages/index.js",
-  "/page-single-project-5": "pages/page-single-project-5.js"
+  "/": "pages/index.js"
 }
