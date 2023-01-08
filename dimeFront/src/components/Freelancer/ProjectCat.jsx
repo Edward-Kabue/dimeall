@@ -9,8 +9,6 @@ function ProjectCat() {
     async () => await getprojectCatData()
   );
 
-  console.log(linkTabs);
-
   return (
     <div className='links-tabs'>
       <ul
@@ -22,14 +20,14 @@ function ProjectCat() {
           linkTabs.map((link) => (
             <li className='nav-item' role='presentation' key={link.id}>
               <button
-                className={`nav-link ${link.id === 0 ? 'active' : ''}`}
-                id={`pills-${link.id}-tab`}
+                className={`nav-link ${link.tab === 0 ? 'active' : ''}`}
+                id={`pills-${link.tab}-tab`}
                 data-bs-toggle='pill'
                 data-bs-target={`#pills-${link.tab}`}
                 type='button'
                 role='tab'
                 aria-controls={link.control}
-                aria-selected={link.id === 0 ? 'true' : 'false'}
+                aria-selected={link.tab === 0 ? 'true' : 'false'}
               >
                 {link.name}
               </button>
