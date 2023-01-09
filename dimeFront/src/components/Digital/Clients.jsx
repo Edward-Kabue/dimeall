@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import portfolios from '@data/Digital/portfolio.json';
+import { useQuery } from 'react-query';
+import { getclientData } from '@data/graph/clients/clients';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -11,6 +13,12 @@ import 'swiper/css/pagination';
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const Clients = () => {
+  const assetsUrl = process.env.NEXT_PUBLIC_ASSETS_URL;
+  const { data: client_logos, isSuccess } = useQuery(
+    'client_logos',
+    async () => await getclientData()
+  );
+  console.log(client_logos);
   return (
     <section
       className='portfolio section-padding bg-gray style-1'
@@ -67,37 +75,41 @@ const Clients = () => {
                 },
               }}
             >
-              {portfolios.map((portfolio, index) => (
-                <SwiperSlide key={index}>
-                  <div className='portfolio-card'>
-                    <div className='img'>
-                      <img src={portfolio.image} alt='' />
-                    </div>
-                    <div className='info'>
-                      <h5>
-                        <Link href='/page-single-project-5'>
-                          <a>{portfolio.title}</a>
-                        </Link>
-                      </h5>
-                      <small className='d-block color-main text-uppercase'>
-                        {portfolio.types.map((type, i) => (
-                          <a href='#' className='me-1' key={i}>
-                            {type}
-                          </a>
-                        ))}
-                      </small>
-                      <div className='text'>{portfolio.text}</div>
-                      <div className='tags'>
-                        {portfolio.tags.map((tag, i) => (
-                          <a href='#' className='me-1' key={i}>
-                            {tag}
-                          </a>
-                        ))}
+              {isSuccess &&
+                client_logos.map((logo, index) => (
+                  <SwiperSlide key={index}>
+                    <div className='portfolio-card'>
+                      <div className='img'>
+                        <img
+                          src={`${assetsUrl}/${logo.directus_files_id.id}`}
+                          alt=''
+                        />
+                      </div>
+                      <div className='info'>
+                        <h5>
+                          <Link href='/page-single-project-5'>
+                            <a>{portfolio.title}</a>
+                          </Link>
+                        </h5>
+                        <small className='d-block color-main text-uppercase'>
+                          {portfolio.types.map((type, i) => (
+                            <a href='#' className='me-1' key={i}>
+                              {type}
+                            </a>
+                          ))}
+                        </small>
+                        <div className='text'>{portfolio.text}</div>
+                        <div className='tags'>
+                          {portfolio.tags.map((tag, i) => (
+                            <a href='#' className='me-1' key={i}>
+                              {tag}
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
+                  </SwiperSlide>
+                ))}
             </Swiper>
 
             <div className='swiper-pagination'></div>
