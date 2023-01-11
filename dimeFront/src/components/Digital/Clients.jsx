@@ -12,12 +12,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
-
+const found = async () => await getclientData();
 const Clients = () => {
-  const { data: clientLogos, isSuccess } = useQuery(
-    'clientLogos',
-    async () => await getclientData()
-  );
+  const { data: clientLogos, isSuccess } = useQuery('clientLogos', found, {
+    refetchOnMount: false,
+    retry: 2,
+    refetchOnWindowFocus: false,
+  });
   console.log(clientLogos);
   return (
     <section
@@ -31,7 +32,7 @@ const Clients = () => {
               <h6 className='color-main text-uppercase wow fadeInUp'>
                 Portfolio
               </h6>
-              <h2 className='wow fadeInUp'>
+              <h2 className='wow fadeInUp' data-wow-duration='1.3s'>
                 Latest Projects <span className='fw-normal'>From Our Team</span>
               </h2>
             </div>

@@ -33,10 +33,6 @@ class MyDocument extends Document {
             rel='stylesheet'
             href='https://fonts.cdnfonts.com/css/oxanium'
           />
-          <link
-            rel='stylesheet'
-            href='https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap'
-          />
         </Head>
 
         <body>

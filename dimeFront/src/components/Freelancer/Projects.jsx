@@ -10,11 +10,13 @@ import ProjectCat from './ProjectCat';
 SwiperCore.use([Autoplay]);
 
 const Projects = () => {
+  const found = async () => await getprojectData();
   const assetsUrl = process.env.NEXT_PUBLIC_ASSETS_URL;
-  const { data: tabContent, isSuccess } = useQuery(
-    'tabContent',
-    async () => await getprojectData()
-  );
+  const { data: tabContent, isSuccess } = useQuery('tabContent', found, {
+    refetchOnMount: false,
+    retry: 2,
+    refetchOnWindowFocus: false,
+  });
   console.log(tabContent);
   const [loadSwiper, setLoadSwiper] = useState(false);
 
@@ -36,7 +38,7 @@ const Projects = () => {
           {isSuccess &&
             tabContent.map((cont, idx) => (
               <div
-                className={`tab-pane fade ${idx === 1 ? 'show active' : ''}`}
+                className={`tab-pane  ${idx === 1 ? 'show active' : ''}`}
                 id={`pills-${cont.projCat[0].linkTabs_id.tab}`}
                 role='tabpanel'
                 aria-labelledby={`pills-${cont.projCat[0].linkTabs_id.tab}-tab`}
