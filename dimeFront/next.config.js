@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 const ContentSecurityPolicy = `
-  default-src *;
+  default-src '*';
 `;
 
 const nextConfig = {
