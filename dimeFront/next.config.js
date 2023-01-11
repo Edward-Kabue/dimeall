@@ -2,6 +2,7 @@
 const path = require('path');
 const ContentSecurityPolicy = `
   default-src 'self' https://cms.dimetechgroup.com/graphql; 
+  font-src 'self' https://fonts.cdnfonts.com/css/oxanium;
 `;
 const securityHeaders = [
   {
