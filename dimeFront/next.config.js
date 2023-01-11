@@ -17,7 +17,7 @@ const nextConfig = {
     return [
       {
         // matching all API routes
-        source: '/graphql/:path*',
+        source: 'https://cms.dimetechgroup.com/graphql/*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
