@@ -16,8 +16,8 @@ const nextConfig = {
   rewrites: {
     return: [
       {
-        source: '/graphql',
-        destination: 'https://cms.dimetechgroup.com',
+        source: 'https://cms.dimetechgroup.com/graphql',
+        destination: 'https://cms.dimetechgroup.com/graphql',
       },
     ],
   },
