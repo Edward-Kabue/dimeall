@@ -70,9 +70,15 @@ TABLE OF CONTENTS:-
 ================================================================*/
 /* --------------- variable --------------- */
 :root {
+<<<<<<< HEAD
   --color-main: #0066ff;
   --color-primary: #0066ff;
   --color-secondary: #02b5ff;
+=======
+  --color-main: #2a2f87;
+  --color-primary: #2a2f87;
+  --color-secondary: #aa1e22;
+>>>>>>> 5159643f8954cf854cf4964ffc8243a8e41e29ae
   --color-blue2: #4a00e1;
   --color-blue4: #5842bc;
   --color-blue5: #157efb;
@@ -3235,7 +3241,11 @@ small.text {
 }
 
 .navbar.style-9.nav-scroll {
+<<<<<<< HEAD
   background: #1f227d !important;
+=======
+  background: #000 !important;
+>>>>>>> 5159643f8954cf854cf4964ffc8243a8e41e29ae
 }
 
 .navbar.style-9.nav-scroll .content {

@@ -15,7 +15,11 @@ const Projects = () => {
     'tabContent',
     async () => await getprojectData()
   );
+<<<<<<< HEAD
 
+=======
+  console.log(tabContent);
+>>>>>>> 5159643f8954cf854cf4964ffc8243a8e41e29ae
   const [loadSwiper, setLoadSwiper] = useState(false);
 
   useEffect(() => {
