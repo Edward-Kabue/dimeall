@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
-
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self';
@@ -8,8 +7,12 @@ const ContentSecurityPolicy = `
   style-src 'self' example.com;
   font-src 'self';  
 `;
-const securityHeaders = [ContentSecurityPolicy];
-
+const securityHeaders = [
+  {
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+  },
+];
 const nextConfig = {
   reactStrictMode: false,
   sassOptions: {
@@ -25,7 +28,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Apply these headers to all routes in your application.
         source: '/:path*',
         headers: securityHeaders,
       },
