@@ -3,8 +3,8 @@ const path = require('path');
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self';
-  child-src https://cms.dimetechgroup.com/graphql;
-  style-src 'self' https://cms.dimetechgroup.com/graphql;
+  child-src self;
+  style-src 'self';
   font-src 'self';  
 `;
 const securityHeaders = [
