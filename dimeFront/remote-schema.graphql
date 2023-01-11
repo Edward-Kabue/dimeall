@@ -1,0 +1,378 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type Query {
+    linkTabs(filter: linkTabs_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [linkTabs!]!
+    linkTabs_aggregated(filter: linkTabs_filter, groupBy: [String], limit: Int, search: String, sort: [String]): [linkTabs_aggregated!]!
+    linkTabs_by_id(id: ID!): linkTabs
+    tabContent(filter: tabContent_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [tabContent!]!
+    tabContent_aggregated(filter: tabContent_filter, groupBy: [String], limit: Int, search: String, sort: [String]): [tabContent_aggregated!]!
+    tabContent_by_id(id: ID!): tabContent
+    tabContent_files(filter: tabContent_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [tabContent_files!]!
+    tabContent_files_aggregated(filter: tabContent_files_filter, groupBy: [String], limit: Int, search: String, sort: [String]): [tabContent_files_aggregated!]!
+    tabContent_files_by_id(id: ID!): tabContent_files
+    tabContent_linkTabs(filter: tabContent_linkTabs_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [tabContent_linkTabs!]!
+    tabContent_linkTabs_aggregated(filter: tabContent_linkTabs_filter, groupBy: [String], limit: Int, search: String, sort: [String]): [tabContent_linkTabs_aggregated!]!
+    tabContent_linkTabs_by_id(id: ID!): tabContent_linkTabs
+}
+
+type count_functions {
+    count: Int
+}
+
+type datetime_functions {
+    day: Int
+    hour: Int
+    minute: Int
+    month: Int
+    second: Int
+    week: Int
+    weekday: Int
+    year: Int
+}
+
+type directus_files {
+    charset: String
+    description: String
+    duration: Int
+    embed: String
+    filename_disk: String
+    filename_download: String!
+    filesize: GraphQLBigInt
+    folder: String
+    height: Int
+    id: ID!
+    location: String
+    metadata: JSON
+    metadata_func: count_functions
+    modified_by: String
+    modified_on: Date
+    modified_on_func: datetime_functions
+    storage: String!
+    tags: JSON
+    tags_func: count_functions
+    title: String
+    type: String
+    uploaded_by: String
+    uploaded_on: Date
+    uploaded_on_func: datetime_functions
+    width: Int
+}
+
+type linkTabs {
+    control: String
+    date_created: Date
+    date_created_func: datetime_functions
+    date_updated: Date
+    date_updated_func: datetime_functions
+    id: ID!
+    name: String
+    sort: Int
+    status: String
+    tab: String
+    user_created: String
+    user_updated: String
+}
+
+type linkTabs_aggregated {
+    avg: linkTabs_aggregated_fields
+    avgDistinct: linkTabs_aggregated_fields
+    count: linkTabs_aggregated_count
+    countAll: Int
+    countDistinct: linkTabs_aggregated_count
+    group: JSON
+    max: linkTabs_aggregated_fields
+    min: linkTabs_aggregated_fields
+    sum: linkTabs_aggregated_fields
+    sumDistinct: linkTabs_aggregated_fields
+}
+
+type linkTabs_aggregated_count {
+    control: Int
+    date_created: Int
+    date_updated: Int
+    id: Int
+    name: Int
+    sort: Int
+    status: Int
+    tab: Int
+    user_created: Int
+    user_updated: Int
+}
+
+type linkTabs_aggregated_fields {
+    id: Float
+    sort: Float
+}
+
+type tabContent {
+    SlideTitle: String
+    date_created: Date
+    date_created_func: datetime_functions
+    date_updated: Date
+    date_updated_func: datetime_functions
+    id: ID!
+    projCat(filter: tabContent_linkTabs_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [tabContent_linkTabs]
+    projCat_func: count_functions
+    slides(filter: tabContent_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [tabContent_files]
+    slides_func: count_functions
+    sort: Int
+    status: String
+    subTitle: String
+    user_created: String
+    user_updated: String
+}
+
+type tabContent_aggregated {
+    avg: tabContent_aggregated_fields
+    avgDistinct: tabContent_aggregated_fields
+    count: tabContent_aggregated_count
+    countAll: Int
+    countDistinct: tabContent_aggregated_count
+    group: JSON
+    max: tabContent_aggregated_fields
+    min: tabContent_aggregated_fields
+    sum: tabContent_aggregated_fields
+    sumDistinct: tabContent_aggregated_fields
+}
+
+type tabContent_aggregated_count {
+    SlideTitle: Int
+    date_created: Int
+    date_updated: Int
+    id: Int
+    projCat: Int
+    slides: Int
+    sort: Int
+    status: Int
+    subTitle: Int
+    user_created: Int
+    user_updated: Int
+}
+
+type tabContent_aggregated_fields {
+    id: Float
+    sort: Float
+}
+
+type tabContent_files {
+    directus_files_id(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+    id: ID!
+    tabContent_id(filter: tabContent_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): tabContent
+}
+
+type tabContent_files_aggregated {
+    avg: tabContent_files_aggregated_fields
+    avgDistinct: tabContent_files_aggregated_fields
+    count: tabContent_files_aggregated_count
+    countAll: Int
+    countDistinct: tabContent_files_aggregated_count
+    group: JSON
+    max: tabContent_files_aggregated_fields
+    min: tabContent_files_aggregated_fields
+    sum: tabContent_files_aggregated_fields
+    sumDistinct: tabContent_files_aggregated_fields
+}
+
+type tabContent_files_aggregated_count {
+    directus_files_id: Int
+    id: Int
+    tabContent_id: Int
+}
+
+type tabContent_files_aggregated_fields {
+    id: Float
+    tabContent_id: Float
+}
+
+type tabContent_linkTabs {
+    id: ID!
+    linkTabs_id(filter: linkTabs_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): linkTabs
+    tabContent_id(filter: tabContent_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): tabContent
+}
+
+type tabContent_linkTabs_aggregated {
+    avg: tabContent_linkTabs_aggregated_fields
+    avgDistinct: tabContent_linkTabs_aggregated_fields
+    count: tabContent_linkTabs_aggregated_count
+    countAll: Int
+    countDistinct: tabContent_linkTabs_aggregated_count
+    group: JSON
+    max: tabContent_linkTabs_aggregated_fields
+    min: tabContent_linkTabs_aggregated_fields
+    sum: tabContent_linkTabs_aggregated_fields
+    sumDistinct: tabContent_linkTabs_aggregated_fields
+}
+
+type tabContent_linkTabs_aggregated_count {
+    id: Int
+    linkTabs_id: Int
+    tabContent_id: Int
+}
+
+type tabContent_linkTabs_aggregated_fields {
+    id: Float
+    linkTabs_id: Float
+    tabContent_id: Float
+}
+
+"ISO8601 Date values"
+scalar Date
+
+"BigInt value"
+scalar GraphQLBigInt
+
+"A Float or a String"
+scalar GraphQLStringOrFloat
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
+input count_function_filter_operators {
+    count: number_filter_operators
+}
+
+input date_filter_operators {
+    _between: [GraphQLStringOrFloat]
+    _eq: String
+    _gt: String
+    _gte: String
+    _in: [String]
+    _lt: String
+    _lte: String
+    _nbetween: [GraphQLStringOrFloat]
+    _neq: String
+    _nin: [String]
+    _nnull: Boolean
+    _null: Boolean
+}
+
+input datetime_function_filter_operators {
+    day: number_filter_operators
+    hour: number_filter_operators
+    minute: number_filter_operators
+    month: number_filter_operators
+    second: number_filter_operators
+    week: number_filter_operators
+    weekday: number_filter_operators
+    year: number_filter_operators
+}
+
+input directus_files_filter {
+    _and: [directus_files_filter]
+    _or: [directus_files_filter]
+    charset: string_filter_operators
+    description: string_filter_operators
+    duration: number_filter_operators
+    embed: string_filter_operators
+    filename_disk: string_filter_operators
+    filename_download: string_filter_operators
+    filesize: number_filter_operators
+    folder: string_filter_operators
+    height: number_filter_operators
+    id: string_filter_operators
+    location: string_filter_operators
+    metadata: string_filter_operators
+    metadata_func: count_function_filter_operators
+    modified_by: string_filter_operators
+    modified_on: date_filter_operators
+    modified_on_func: datetime_function_filter_operators
+    storage: string_filter_operators
+    tags: string_filter_operators
+    tags_func: count_function_filter_operators
+    title: string_filter_operators
+    type: string_filter_operators
+    uploaded_by: string_filter_operators
+    uploaded_on: date_filter_operators
+    uploaded_on_func: datetime_function_filter_operators
+    width: number_filter_operators
+}
+
+input linkTabs_filter {
+    _and: [linkTabs_filter]
+    _or: [linkTabs_filter]
+    control: string_filter_operators
+    date_created: date_filter_operators
+    date_created_func: datetime_function_filter_operators
+    date_updated: date_filter_operators
+    date_updated_func: datetime_function_filter_operators
+    id: number_filter_operators
+    name: string_filter_operators
+    sort: number_filter_operators
+    status: string_filter_operators
+    tab: string_filter_operators
+    user_created: string_filter_operators
+    user_updated: string_filter_operators
+}
+
+input number_filter_operators {
+    _between: [GraphQLStringOrFloat]
+    _eq: GraphQLStringOrFloat
+    _gt: GraphQLStringOrFloat
+    _gte: GraphQLStringOrFloat
+    _in: [GraphQLStringOrFloat]
+    _lt: GraphQLStringOrFloat
+    _lte: GraphQLStringOrFloat
+    _nbetween: [GraphQLStringOrFloat]
+    _neq: GraphQLStringOrFloat
+    _nin: [GraphQLStringOrFloat]
+    _nnull: Boolean
+    _null: Boolean
+}
+
+input string_filter_operators {
+    _contains: String
+    _empty: Boolean
+    _ends_with: String
+    _eq: String
+    _icontains: String
+    _in: [String]
+    _ncontains: String
+    _nempty: Boolean
+    _nends_with: String
+    _neq: String
+    _nin: [String]
+    _nnull: Boolean
+    _nstarts_with: String
+    _null: Boolean
+    _starts_with: String
+}
+
+input tabContent_files_filter {
+    _and: [tabContent_files_filter]
+    _or: [tabContent_files_filter]
+    directus_files_id: directus_files_filter
+    id: number_filter_operators
+    tabContent_id: tabContent_filter
+}
+
+input tabContent_filter {
+    SlideTitle: string_filter_operators
+    _and: [tabContent_filter]
+    _or: [tabContent_filter]
+    date_created: date_filter_operators
+    date_created_func: datetime_function_filter_operators
+    date_updated: date_filter_operators
+    date_updated_func: datetime_function_filter_operators
+    id: number_filter_operators
+    projCat: tabContent_linkTabs_filter
+    projCat_func: count_function_filter_operators
+    slides: tabContent_files_filter
+    slides_func: count_function_filter_operators
+    sort: number_filter_operators
+    status: string_filter_operators
+    subTitle: string_filter_operators
+    user_created: string_filter_operators
+    user_updated: string_filter_operators
+}
+
+input tabContent_linkTabs_filter {
+    _and: [tabContent_linkTabs_filter]
+    _or: [tabContent_linkTabs_filter]
+    id: number_filter_operators
+    linkTabs_id: linkTabs_filter
+    tabContent_id: tabContent_filter
+}
