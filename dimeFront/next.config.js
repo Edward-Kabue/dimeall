@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 const ContentSecurityPolicy = `
-  default-src '*';
-  script-src '*';
-  child-src '*';
-  style-src 'self';
-  font-src 'self';  
+  default-src *; 
 `;
 const securityHeaders = [
   {
