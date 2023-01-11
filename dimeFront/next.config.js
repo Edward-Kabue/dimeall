@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 const ContentSecurityPolicy = `
-  default-src '*'; 
+  default-src 'self' https://cms.dimetechgroup.com/graphql; 
 `;
 const securityHeaders = [
   {
