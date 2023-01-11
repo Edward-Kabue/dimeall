@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self';
-  child-src self;
+  default-src '*';
+  script-src '*';
+  child-src '*';
   style-src 'self';
   font-src 'self';  
 `;
