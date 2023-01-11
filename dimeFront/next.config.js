@@ -1,14 +1,9 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 const ContentSecurityPolicy = `
-  default-src *; 
+  default-src *;
 `;
-const securityHeaders = [
-  {
-    key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
-  },
-];
+
 const nextConfig = {
   reactStrictMode: false,
   sassOptions: {
@@ -25,7 +20,7 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        headers: securityHeaders,
+        headers: ContentSecurityPolicy,
       },
     ];
   },
