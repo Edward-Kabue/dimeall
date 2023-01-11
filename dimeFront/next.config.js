@@ -21,9 +21,6 @@ const nextConfig = {
       },
     ],
   },
-  return: {
-    rewrites,
-  },
 };
 
 module.exports = nextConfig;
