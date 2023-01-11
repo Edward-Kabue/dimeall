@@ -1,15 +1,6 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
-const ContentSecurityPolicy = `
-  default-src 'self' 'https://cms.dimetechgroup.com/graphql'; 
-  font-src 'self' 'https://fonts.cdnfonts.com/css/oxanium';
-`;
-const securityHeaders = [
-  {
-    key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
-  },
-];
+
 const nextConfig = {
   reactStrictMode: false,
   sassOptions: {
@@ -25,8 +16,21 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:path*',
-        headers: securityHeaders,
+        // matching all API routes
+        source: '/api/:path*',
+        headers: [
+          { key: 'Access-Control-Allow-Credentials', value: 'true' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value:
+              'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+          },
+        ],
       },
     ];
   },
