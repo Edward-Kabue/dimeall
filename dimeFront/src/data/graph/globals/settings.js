@@ -3,17 +3,20 @@ import fetchData from '@utils/fetchData';
 export const getsettingsData = async () => {
   const data = await fetchData(
     `query settingsData {
-            siteSettings {
-                siteLogo {
-                     id
-                     title
-                }
+        generalSettings {
+            Logo {
+              id
             }
+            siteFavicon {
+                id
+            }
+            siteTitle
+        }
     }`,
     {
       variables: {},
     }
   );
 
-  return data.data.siteSettings;
+  return data.data.generalSettings;
 };
