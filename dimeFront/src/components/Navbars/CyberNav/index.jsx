@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import navbarScrollEffect from '@common/navbarScrollEffect';
-import Logo from '@common/Logo';
 
 const Navbar = () => {
   const navbarRef = useRef(null);
@@ -50,7 +49,7 @@ const Navbar = () => {
     >
       <div className='container content'>
         <a className='navbar-brand' href='#'>
-          <Logo />
+          <img src='/assets/img/Dimetech_logo.png' alt='Dimetech_logo' />
         </a>
         <button
           className='navbar-toggler'
@@ -78,7 +77,7 @@ const Navbar = () => {
                 data-bs-toggle='dropdown'
                 aria-expanded='false'
               >
-                Home
+                Homes
               </a>
               <ul className='dropdown-menu' aria-labelledby='navbarDropdown1'>
                 <li>

@@ -70,13 +70,13 @@ TABLE OF CONTENTS:-
 ================================================================*/
 /* --------------- variable --------------- */
 :root {
-  <<<<<<< HEAD --color-main: #0066ff;
+  --color-main: #0066ff;
   --color-primary: #0066ff;
   --color-secondary: #02b5ff;
-  =======--color-main: #2a2f87;
+  --color-main: #2a2f87;
   --color-primary: #2a2f87;
   --color-secondary: #aa1e22;
-  >>>>>>>5159643f8954cf854cf4964ffc8243a8e41e29ae --color-blue2: #4a00e1;
+  --color-blue2: #4a00e1;
   --color-blue4: #5842bc;
   --color-blue5: #157efb;
   --color-blue6: #6640f4;
@@ -93,7 +93,7 @@ TABLE OF CONTENTS:-
   --color-yellowGreen: #cef54b;
   --color-gray: #eef4f8;
   --color-gray2: #f0eff5;
-  --color-main-grad: linear-gradient(to right, #0c3df4 0%, #02b5ff 100%);
+  --color-main-grad: linear-gradient(to right, #f40c33 0%, #1b02ff 100%);
 }
 
 .color-main {
@@ -595,6 +595,7 @@ ul {
 img {
   max-width: 100%;
   max-height: 100%;
+
 }
 
 p {
@@ -1823,10 +1824,10 @@ small.text {
   width: 150%;
   height: 100%;
   z-index: 1;
-  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #0c3df4), color-stop(45%, #02b5ff), color-stop(#02b5ff), to(#0c3df4));
-  background: -webkit-linear-gradient(left, #0c3df4 10%, #02b5ff 45%, #02b5ff, #0c3df4);
-  background: -o-linear-gradient(left, #0c3df4 10%, #02b5ff 45%, #02b5ff, #0c3df4);
-  background: linear-gradient(to right, #0c3df4 10%, #02b5ff 45%, #02b5ff, #0c3df4);
+  background: var(--color-main-grad);
+  background: var(--color-main-grad);
+  background: var(--color-main-grad);
+  background: var(--color-main-grad);
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -2765,11 +2766,12 @@ small.text {
 }
 
 .navbar.style-1 .navbar-brand {
-  margin-right: 40px;
+  margin-right: 140px;
+
 }
 
 .navbar.style-1 .navbar-nav .nav-item .nav-link {
-  font-size: 12px;
+  font-size: 16px;
   color: #000;
   font-weight: 700;
   line-height: 2;

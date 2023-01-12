@@ -1,16 +1,8 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import navbarScrollEffect from '@common/navbarScrollEffect';
-import { getsettingsData } from '@data/graph/settings/settings';
-import assetUrl from '@utils/assetUrl';
-import { useQuery } from 'react-query';
-const Navbar = () => {
-  const { data: siteSettings, isSuccess } = useQuery(
-    'siteSettings',
-    async () => await getsettingsData()
-  );
 
-  console.log(siteSettings);
+const Navbar = () => {
   const navbarRef = useRef(null);
 
   useEffect(() => {
@@ -37,17 +29,29 @@ const Navbar = () => {
     dropDownToggler?.classList?.remove('show');
     dropDownMenu?.classList?.remove('show');
   };
+  const toggleSideMenu = (e) => {
+    e.preventDefault();
+
+    document.querySelector('.side_menu_btn').classList.toggle('active');
+
+    const side_menu = document.getElementById('side_menu');
+    const side_overlay = document.querySelector('.side_overlay');
+
+    side_menu && side_menu.classList.toggle('show');
+    side_overlay && side_overlay.classList.toggle('show');
+  };
 
   return (
     <nav
       className='navbar navbar-expand-lg navbar-light style-1'
       ref={navbarRef}
     >
-      <div className='container'>
-        <a className='navbar-brand' href='#'>
+      <div className='container-fluid'>
+        <a className='navbar-brand' style={{ marginRight: '320px' }} href='/'>
           <img
-            src={`${assetUrl}/${isSuccess && siteSettings.siteLogo}`}
-            alt=''
+            src='/assets/img/Dimetech_logo.png'
+            style={{ width: '220px' }}
+            alt='Dimetech_logo'
           />
         </a>
         <button
@@ -191,6 +195,16 @@ const Navbar = () => {
             </li>
           </ul>
           <div className='nav-side'>
+            <div className='d-flex align-items-center'>
+              <a href='#' className='me-4'>
+                <img src='/assets/img/icons/user.png' alt='' />
+              </a>
+              <a href='#0' className='side_menu_btn' onClick={toggleSideMenu}>
+                <img src='/assets/img/icons/4dots.png' alt='' />
+              </a>
+            </div>
+          </div>
+          <div className='nav-side'>
             <div className='hotline pe-4'>
               <div className='icon me-3'>
                 <i className='bi bi-telephone'></i>
@@ -201,13 +215,6 @@ const Navbar = () => {
               </div>
             </div>
             <div className='qoute-nav ps-4'>
-              <a href='#' className='search-icon me-3'>
-                <i className='bi bi-search'></i>
-              </a>
-              <a href='#' className='cart-icon me-3'>
-                <i className='bi bi-cart'></i>
-                <span className='cart-num ms-1'>2</span>
-              </a>
               <Link href='/page-contact-5'>
                 <a className='btn sm-butn butn-gard border-0 text-white'>
                   <span>Free Quote</span>

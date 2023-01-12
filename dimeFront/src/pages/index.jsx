@@ -15,7 +15,7 @@ import Team from '@components/CyberSecurity/Team';
 import Blog from '@components/CyberSecurity/Blog';
 import Footer from '@components/CyberSecurity/Footer';
 import Slide from '@components/slide/slide';
-import Projects from '@components/Freelancer/Projects';
+import Projects from '@components/Software/Projects';
 import Clients from '@components/Digital/Clients';
 
 const HomeCyberSecurity = () => {
