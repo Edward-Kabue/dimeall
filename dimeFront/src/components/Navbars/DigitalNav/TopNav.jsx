@@ -57,38 +57,6 @@ const TopNav = () => {
                     <i className='fab fa-instagram'></i>
                   </a>
                 </div>
-                <div
-                  className='dropdown'
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <a
-                    className='dropdown-toggle'
-                    href='#'
-                    role='button'
-                    id='dropdownMenuLink'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
-                    <img className='me-1' src='/assets/img/lang.png' alt='' />{' '}
-                    English
-                  </a>
-                  <ul
-                    className='dropdown-menu'
-                    aria-labelledby='dropdownMenuLink'
-                  >
-                    <li>
-                      <a className='dropdown-item' href='#'>
-                        French
-                      </a>
-                    </li>
-                    <li>
-                      <a className='dropdown-item' href='#'>
-                        Arabic
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>

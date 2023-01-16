@@ -8,23 +8,23 @@
   ],
   "numbers": [
     {
-      "number": 20,
-      "info": "Years of Experience",
+      "number": 15,
+      "info": "Years of Cumulative Experience",
       "operator": {
         "icon": "fas fa-plus"
       }
     },
     {
-      "number": 15,
+      "number": 30,
       "info": "Projects completed",
-      "operator": "K"
+      "icon": "fas fa-plus"
     },
     {
       "number": 240,
       "info": "Awards achievied"
     },
     {
-      "number": 180,
+      "number": 50,
       "info": "Satisfied clients on 24 countries"
     }
   ]

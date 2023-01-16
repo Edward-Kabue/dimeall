@@ -17,6 +17,7 @@ import Footer from '@components/CyberSecurity/Footer';
 import Slide from '@components/slide/slide';
 import Projects from '@components/Software/Projects';
 import Clients from '@components/Digital/Clients';
+import HeroSlider from '@components/Digital/HeroSlider';
 
 const HomeCyberSecurity = () => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const HomeCyberSecurity = () => {
         <SideMenu />
         <Header />
         <main>
+          <HeroSlider />
           <Slide />
           <Features />
           <About />
