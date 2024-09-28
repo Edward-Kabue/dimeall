@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "directus": "^9.22.1",
+    "directus": "^10.13.0",
     "sqlite3": "^5.1.4"
   }
 }
