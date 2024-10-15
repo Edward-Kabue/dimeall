@@ -78,7 +78,7 @@
                   return d = f, "undefined" != typeof console && null !== console ? console.error("Error parsing inline pace options", d) : void 0
               }
           }
-      }, g = function() {
+      }, g = (function() {
           function a() {}
           return a.prototype.on = function(a, b, c, d) {
               var e;
@@ -103,13 +103,13 @@
                   return i
               }
           }, a
-      }(), j = window.Pace || {}, window.Pace = j, v(j, g.prototype), D = j.options = v({}, u, window.paceOptions, x()), U = ["ajax", "document", "eventLag", "elements"], Q = 0, S = U.length; S > Q; Q++) K = U[Q], D[K] === !0 && (D[K] = u[K]);
-  i = function(a) {
+      }()), j = window.Pace || {}, window.Pace = j, v(j, g.prototype), D = j.options = v({}, u, window.paceOptions, x()), U = ["ajax", "document", "eventLag", "elements"], Q = 0, S = U.length; S > Q; Q++) K = U[Q], D[K] === !0 && (D[K] = u[K]);
+  i = (function(a) {
       function b() {
           return V = b.__super__.constructor.apply(this, arguments)
       }
       return Z(b, a), b
-  }(Error), b = function() {
+  }(Error)), b = (function() {
       function a() {
           this.progress = 0
       }
@@ -140,7 +140,7 @@
       }, a.prototype.done = function() {
           return this.progress >= 100
       }, a
-  }(), h = function() {
+  }()), h = (function() {
       function a() {
           this.bindings = {}
       }
@@ -154,7 +154,7 @@
           var c;
           return null == (c = this.bindings)[a] && (c[a] = []), this.bindings[a].push(b)
       }, a
-  }(), P = window.XMLHttpRequest, O = window.XDomainRequest, N = window.WebSocket, w = function(a, b) {
+  }()), P = window.XMLHttpRequest, O = window.XDomainRequest, N = window.WebSocket, w = function(a, b) {
       var c, d, e, f;
       f = [];
       for (d in b.prototype) try {
@@ -177,7 +177,7 @@
           if (b = a.toUpperCase(), $.call(D.ajax.trackMethods, b) >= 0) return !0
       }
       return !1
-  }, k = function(a) {
+  }, k = (function(a) {
       function b() {
           var a, c = this;
           b.__super__.constructor.apply(this, arguments), a = function(a) {
@@ -221,7 +221,7 @@
           }
       }
       return Z(b, a), b
-  }(h), R = null, y = function() {
+  }(h)), R = null, y = function() {
       return null == R && (R = new k), R
   }, I = function(a) {
       var b, c, d, e;
@@ -245,7 +245,7 @@
               return k
           }
       }, c))
-  }), a = function() {
+  }), a = (function() {
       function a() {
           var a = this;
           this.elements = [], y().on("request", function() {
@@ -256,7 +256,7 @@
           var b, c, d, e;
           return d = a.type, b = a.request, e = a.url, I(e) ? void 0 : (c = "socket" === d ? new n(b) : new o(b), this.elements.push(c))
       }, a
-  }(), o = function() {
+  }()), o = (function() {
       function a(a) {
           var b, c, d, e, f, g, h = this;
           if (this.progress = 0, null != window.ProgressEvent)
@@ -271,7 +271,7 @@
           }
       }
       return a
-  }(), n = function() {
+  }()), n = (function() {
       function a(a) {
           var b, c, d, e, f = this;
           for (this.progress = 0, e = ["error", "open"], c = 0, d = e.length; d > c; c++) b = e[c], a.addEventListener(b, function() {
@@ -279,13 +279,13 @@
           }, !1)
       }
       return a
-  }(), d = function() {
+  }()), d = (function() {
       function a(a) {
           var b, c, d, f;
           for (null == a && (a = {}), this.elements = [], null == a.selectors && (a.selectors = []), f = a.selectors, c = 0, d = f.length; d > c; c++) b = f[c], this.elements.push(new e(b))
       }
       return a
-  }(), e = function() {
+  }()), e = (function() {
       function a(a) {
           this.selector = a, this.progress = 0, this.check()
       }
@@ -297,7 +297,7 @@
       }, a.prototype.done = function() {
           return this.progress = 100
       }, a
-  }(), c = function() {
+  }()), c = (function() {
       function a() {
           var a, b, c = this;
           this.progress = null != (b = this.states[document.readyState]) ? b : 100, a = document.onreadystatechange, document.onreadystatechange = function() {
@@ -309,7 +309,7 @@
           interactive: 50,
           complete: 100
       }, a
-  }(), f = function() {
+  }()), f = (function() {
       function a() {
           var a, b, c, d, e, f = this;
           this.progress = 0, a = 0, e = [], d = 0, c = C(), b = setInterval(function() {
@@ -318,7 +318,7 @@
           }, 50)
       }
       return a
-  }(), m = function() {
+  }()), m = (function() {
       function a(a) {
           this.source = a, this.last = this.sinceLastUpdate = 0, this.rate = D.initialRate, this.catchup = 0, this.progress = this.lastProgress = 0, null != this.source && (this.progress = F(this.source, "progress"))
       }
@@ -326,7 +326,7 @@
           var c;
           return null == b && (b = F(this.source, "progress")), b >= 100 && (this.done = !0), b === this.last ? this.sinceLastUpdate += a : (this.sinceLastUpdate && (this.rate = (b - this.last) / this.sinceLastUpdate), this.catchup = (b - this.progress) / D.catchupTime, this.sinceLastUpdate = 0, this.last = b), b > this.progress && (this.progress += this.catchup * a), c = 1 - Math.pow(this.progress / 100, D.easeFactor), this.progress += c * this.rate * a, this.progress = Math.min(this.lastProgress + D.maxProgressPerFrame, this.progress), this.progress = Math.max(0, this.progress), this.progress = Math.min(100, this.progress), this.lastProgress = this.progress, this.progress
       }, a
-  }(), L = null, H = null, r = null, M = null, p = null, s = null, j.running = !1, z = function() {
+  }()), L = null, H = null, r = null, M = null, p = null, s = null, j.running = !1, z = function() {
       return D.restartOnPushState ? j.restart() : void 0
   }, null != window.history.pushState && (T = window.history.pushState, window.history.pushState = function() {
       return z(), T.apply(window.history, arguments)
